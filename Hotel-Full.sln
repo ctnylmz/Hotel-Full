@@ -13,7 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp", "Frontend\WebApp\W
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Business", "Backend\Business\Business.csproj", "{151A8138-CB70-43C1-B54E-518C7AA369CF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAcess", "Backend\DataAcess\DataAcess.csproj", "{B9AA07E2-E7ED-435B-A084-D3100287B2A2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "Backend\DataAcess\DataAccess.csproj", "{B9AA07E2-E7ED-435B-A084-D3100287B2A2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entities", "Backend\Entities\Entities.csproj", "{344848F1-B096-4B66-BCEF-0F77E69D7CD4}"
 EndProject
