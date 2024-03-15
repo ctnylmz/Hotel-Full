@@ -1,0 +1,44 @@
+﻿@model List<TestimonialViewModel>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="col-lg-10 mx-auto m-4">
+    <a href="/Admin/Testimonial/Add" class="btn btn-primary w-100 my-4">Add New Testimonial</a>
+
+    <div class="card">
+        <div class="card-body">
+            <div class="card-title">
+                <h4>Testimonial List</h4>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>image</th>
+                            <th>Name</th>
+                            <th>Title</th>
+                            <th>Description</th>
+                            <th>Operations</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var testimonial in Model)
+                        {
+                            <tr>
+                                <td>@testimonial.name</td>
+                                <td>@testimonial.title</td>
+                                <td>@testimonial.description</td>
+                                <td>@testimonial.image</td>
+                                <td>
+                                    <a href="/Admin/Testimonial/Delete/@testimonial.id" class="btn btn-danger mr-2">Delete</a>
+                                    <a href="/Admin/Testimonial/Update/@testimonial.id" class="btn btn-primary">Update</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

@@ -20,6 +20,12 @@ namespace Business.DependencyResolvers.Autofac
             builder.RegisterType<RoomManager>().As<IRoomService>().SingleInstance();
             builder.RegisterType<EfRoomDal>().As<IRoomDal>().SingleInstance();
 
+            builder.RegisterType<StaffManager>().As<IStaffService>().SingleInstance();
+            builder.RegisterType<EfStaffDal>().As<IStaffDal>().SingleInstance();
+
+            builder.RegisterType<TestimonialManager>().As<ITestimonialService>().SingleInstance();
+            builder.RegisterType<EfTestimonialDal>().As<ITestimonialDal>().SingleInstance();
+
         }
     }
 }

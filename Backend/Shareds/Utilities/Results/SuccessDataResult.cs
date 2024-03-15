@@ -21,9 +21,6 @@ namespace Shareds.Utilities.Results
 
         }
 
-        public SuccessDataResult() : base(default, true)
-        {
-
-        }
+       
     }
 }

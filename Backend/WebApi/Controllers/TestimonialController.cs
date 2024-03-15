@@ -7,19 +7,19 @@ namespace WebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class StaffController : ControllerBase
+    public class TestimonialController : ControllerBase
     {
-        private readonly IStaffService _staffService;
+        private readonly ITestimonialService _testimonialService;
 
-        public StaffController(IStaffService staffService)
+        public TestimonialController(ITestimonialService testimonialService)
         {
-            _staffService = staffService;
+            _testimonialService = testimonialService;
         }
 
         [HttpPost("Add")]
-        public IActionResult Add(Staff staff)
+        public IActionResult Add(Testimonial testimonial)
         {
-            var result = _staffService.Add(staff);
+            var result = _testimonialService.Add(testimonial);
             if (result.Success)
             {
                 return Ok(result);
@@ -28,9 +28,9 @@ namespace WebApi.Controllers
         }
 
         [HttpPost("Delete")]
-        public IActionResult Delete(Staff staff)
+        public IActionResult Delete(Testimonial testimonial)
         {
-            var result = _staffService.Delete(staff);
+            var result = _testimonialService.Delete(testimonial);
             if (result.Success)
             {
                 return Ok(result);
@@ -39,9 +39,9 @@ namespace WebApi.Controllers
         }
 
         [HttpPost("Update")]
-        public IActionResult Update(Staff staff)
+        public IActionResult Update(Testimonial testimonial)
         {
-            var result = _staffService.Update(staff);
+            var result = _testimonialService.Update(testimonial);
             if (result.Success)
             {
                 return Ok(result);
@@ -52,7 +52,7 @@ namespace WebApi.Controllers
         [HttpGet("GetList")]
         public IActionResult GetList()
         {
-            var result = _staffService.GetList();
+            var result = _testimonialService.GetList();
             if (result.Success)
             {
                 return Ok(result);
@@ -63,14 +63,12 @@ namespace WebApi.Controllers
         [HttpGet("Get/{id}")]
         public IActionResult Get(int id)
         {
-            var result = _staffService.GetById(id);
+            var result = _testimonialService.GetById(id);
             if (result.Success)
             {
                 return Ok(result);
             }
             return BadRequest(result);
         }
-
-
     }
 }

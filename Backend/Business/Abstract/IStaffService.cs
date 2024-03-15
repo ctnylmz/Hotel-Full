@@ -11,6 +11,10 @@ namespace Business.Abstract
 {
     public interface IStaffService
     {
-        
+        IResult Add(Staff staff);
+        IResult Update(Staff staff);
+        IResult Delete(Staff staff);
+        IDataResult<List<Staff>> GetList();
+        IDataResult<Staff> GetById(int id);
     }
 }
