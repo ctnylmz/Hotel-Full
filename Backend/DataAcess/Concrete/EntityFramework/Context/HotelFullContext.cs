@@ -1,4 +1,5 @@
 ﻿using Entities.Concrete;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -8,12 +9,13 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Concrete.EntityFramework.Context
 {
-    public class HotelFullContext : DbContext
+    public class HotelFullContext : IdentityDbContext
     {
+     
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer("Server=DESKTOP-Q7UMMPP\\SQLEXPRESS;Database=HotelFullDB;Integrated Security=True;TrustServerCertificate=true;");
-
         }
 
         public DbSet<Room> Rooms { get; set; }

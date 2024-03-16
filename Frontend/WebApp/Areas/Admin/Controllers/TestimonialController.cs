@@ -6,6 +6,7 @@ using WebApp.Areas.Admin.Models;
 
 namespace WebApp.Areas.Admin.Controllers
 {
+    [Area("Admin")]
     public class TestimonialController : Controller
     {
         private readonly IHttpClientFactory _httpClientFactory;

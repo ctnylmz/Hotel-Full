@@ -11,6 +11,11 @@ namespace Business.Abstract
 {
     public interface IServiceService
     {
-      
+        IResult Add(Service service);
+        IResult Update(Service service);
+        IResult Delete(Service service);
+        IDataResult<List<Service>> GetList();
+        IDataResult<Service> GetById(int id);
+
     }
 }

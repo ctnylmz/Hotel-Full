@@ -1,6 +1,8 @@
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using Business.DependencyResolvers.Autofac;
+using DataAccess.Concrete.EntityFramework.Context;
+using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,6 +21,13 @@ builder.Host
     {
         builder.RegisterModule(new AutofacBusinessModule());
     });
+
+builder.Services.AddIdentity<IdentityUser, IdentityRole>(options =>
+{
+    options.Password.RequireDigit = true;
+})
+.AddEntityFrameworkStores<HotelFullContext>()
+.AddDefaultTokenProviders();
 
 var app = builder.Build();
 

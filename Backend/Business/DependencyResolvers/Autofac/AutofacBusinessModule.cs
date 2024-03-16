@@ -26,6 +26,9 @@ namespace Business.DependencyResolvers.Autofac
             builder.RegisterType<TestimonialManager>().As<ITestimonialService>().SingleInstance();
             builder.RegisterType<EfTestimonialDal>().As<ITestimonialDal>().SingleInstance();
 
+            builder.RegisterType<ServiceManager>().As<IServiceService>().SingleInstance();
+            builder.RegisterType<EfServiceDal>().As<ISercviceDal>().SingleInstance();
+
         }
     }
 }
