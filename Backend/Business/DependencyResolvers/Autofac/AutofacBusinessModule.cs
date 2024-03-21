@@ -32,6 +32,9 @@ namespace Business.DependencyResolvers.Autofac
             builder.RegisterType<AboutManager>().As<IAboutService>().SingleInstance();
             builder.RegisterType<EfAboutDal>().As<IAboutDal>().SingleInstance();
 
+            builder.RegisterType<TrailerManager>().As<ITrailerService>().SingleInstance();
+            builder.RegisterType<EfTrailerDal>().As<ITrailerDal>().SingleInstance();
+
         }
     }
 }
