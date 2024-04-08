@@ -1,7 +1,19 @@
+using DataAccess.Concrete.EntityFramework.Context;
+using Microsoft.AspNetCore.Identity;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddHttpClient();
+
+// DbContext'in servislere eklenmesi
+builder.Services.AddDbContext<HotelFullContext>();
+
+// Identity servislerinin eklenmesi
+builder.Services.AddIdentity<IdentityUser, IdentityRole>()
+    .AddEntityFrameworkStores<HotelFullContext>()
+    .AddDefaultTokenProviders();
 
 var app = builder.Build();
 
@@ -15,13 +27,15 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-
 app.UseRouting();
-
 app.UseAuthorization();
 
 app.MapControllerRoute(
+    name: "area",
+    pattern: "{area}/{controller=Admin}/{action=Index}/{id?}");
+
+app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Default}/{action=Index}/{id?}");
 
 app.Run();
