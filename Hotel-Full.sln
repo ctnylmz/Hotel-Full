@@ -3,17 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34723.18
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Business", "Business\Business.csproj", "{0F74D107-600C-4330-BAED-42E70FCA720A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Business", "Business\Business.csproj", "{0F74D107-600C-4330-BAED-42E70FCA720A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{7AC3AC1D-5DDD-4256-B69A-8918196960F4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccess", "DataAccess\DataAccess.csproj", "{7AC3AC1D-5DDD-4256-B69A-8918196960F4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entities", "Entities\Entities.csproj", "{B83EF3D8-457E-40F5-B43E-EB5769A2F8D9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entities", "Entities\Entities.csproj", "{B83EF3D8-457E-40F5-B43E-EB5769A2F8D9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shareds", "Shareds\Shareds.csproj", "{0F1C784B-F07B-46EA-9CE5-AB3230755C1F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shareds", "Shareds\Shareds.csproj", "{0F1C784B-F07B-46EA-9CE5-AB3230755C1F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi", "WebApi\WebApi.csproj", "{79A6040A-FAF1-497B-81CB-1BB4FE9AAB0D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApi", "WebApi\WebApi.csproj", "{79A6040A-FAF1-497B-81CB-1BB4FE9AAB0D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp", "WebApp\WebApp.csproj", "{637A11A2-19B7-41F8-9201-61511430EE7C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApp", "WebApp\WebApp.csproj", "{637A11A2-19B7-41F8-9201-61511430EE7C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

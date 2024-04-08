@@ -15,7 +15,7 @@
                 <table class="table table-hover">
                     <thead>
                         <tr>
-                            <th>image</th>
+                            <th>#</th>
                             <th>Name</th>
                             <th>Title</th>
                             <th>Description</th>
@@ -26,10 +26,10 @@
                         @foreach (var testimonial in Model)
                         {
                             <tr>
+                                <td><img src="~/@testimonial.image" style="width:60px; height:60px;" /></td>
                                 <td>@testimonial.name</td>
                                 <td>@testimonial.title</td>
                                 <td>@testimonial.description</td>
-                                <td>@testimonial.image</td>
                                 <td>
                                     <a href="/Admin/Testimonial/Delete/@testimonial.id" class="btn btn-danger mr-2">Delete</a>
                                     <a href="/Admin/Testimonial/Update/@testimonial.id" class="btn btn-primary">Update</a>

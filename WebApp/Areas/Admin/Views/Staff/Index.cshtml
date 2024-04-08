@@ -3,6 +3,7 @@
     ViewData["Title"] = "Index";
 }
 
+
 <div class="col-lg-10 mx-auto m-4">
     <a href="/Admin/Staff/Add" class="btn btn-primary w-100 my-4">Add New Staff</a>
 
@@ -15,6 +16,7 @@
                 <table class="table table-hover">
                     <thead>
                         <tr>
+                            <th>#</th>
                             <th>Name</th>
                             <th>Title</th>
                             <th>Facebook</th>
@@ -27,6 +29,7 @@
                         @foreach (var staff in Model)
                         {
                             <tr>
+                                <td><img src="~/@staff.image" style="width:80px; height:80px;" /></td>
                                 <td>@staff.name</td>
                                 <td>@staff.title</td>
                                 <td>@staff.facebook</td>
@@ -37,6 +40,7 @@
                                     <a href="/Admin/Staff/Update/@staff.id" class="btn btn-primary">Update</a>
                                 </td>
                             </tr>
+
                         }
                     </tbody>
                 </table>
