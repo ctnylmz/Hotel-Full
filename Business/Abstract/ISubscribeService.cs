@@ -11,6 +11,10 @@ namespace Business.Abstract
 {
     public interface ISubscribeService
     {
-      
+        IResult Add(Subscribe subscribe);
+        IResult Update(Subscribe subscribe);
+        IResult Delete(Subscribe subscribe);
+        IDataResult<List<Subscribe>> GetList();
+        IDataResult<Subscribe> GetById(int id);
     }
 }
