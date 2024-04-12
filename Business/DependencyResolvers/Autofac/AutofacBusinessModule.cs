@@ -38,6 +38,9 @@ namespace Business.DependencyResolvers.Autofac
             builder.RegisterType<SubscribeManager>().As<ISubscribeService>().SingleInstance();
             builder.RegisterType<EfSubscribeDal>().As<ISubscribeDal>().SingleInstance();
 
+            builder.RegisterType<BookingManager>().As<IBookingService>().SingleInstance();
+            builder.RegisterType<EfBookingDal>().As<IBookingDal>().SingleInstance();
+
         }
     }
 }
