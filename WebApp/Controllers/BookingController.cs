@@ -22,7 +22,7 @@ namespace WebApp.Controllers
         [HttpPost]
         public async Task<IActionResult> Add(BookingViewModel booking)
         {
-            booking.Status = "Onay Bekliyor";
+            booking.status = "Onay Bekliyor";
 
             var client = _httpClientFactory.CreateClient();
             var jsonData = JsonConvert.SerializeObject(booking);

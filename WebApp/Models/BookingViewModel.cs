@@ -11,7 +11,7 @@
         public int childCount { get; set; }
         public int roomCount { get; set; }
         public string specialRequest { get; set; }
-        public string Status { get; set; }
+        public string status { get; set; }
         public string description { get; set; }
 
     }

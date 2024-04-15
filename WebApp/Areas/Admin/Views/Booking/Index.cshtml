@@ -1,0 +1,64 @@
+﻿@model List<BookingViewModel>
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<div class="col-lg-12 mx-auto m-4">
+    <a href="/Admin/Booking/Add" class="btn btn-primary w-100 my-4">Add New Booking</a>
+
+    <div class="card">
+        <div class="card-body">
+            <div class="card-title">
+                <h4>Booking List</h4>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>checkin</th>
+                            <th>checkOut</th>
+                            <th>adultCount</th>
+                            <th>childCount</th>
+                            <th>roomCount</th>
+                            <th>specialRequest</th>
+                            <th>status</th>
+                            <th>description</th>
+                            <th>Operations</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var booking in Model)
+                        {
+                            <tr>
+                                <td>@booking.name</td>
+                                <td>@booking.checkin.Date.ToString("dd-MM-yyyy")</td>
+                                <td>@booking.checkOut.Date.ToString("dd-MM-yyyy")</td>
+                                <td>@booking.adultCount</td>
+                                <td>@booking.childCount</td>
+                                <td>@booking.roomCount</td>
+                                <td>@booking.specialRequest</td>
+                                <td><span class="badge badge-primary">@booking.status</span></td>
+                                <td>@booking.description</td>
+                                <td>
+                                    <span>
+                                        <a href="/Admin/Booking/Delete/@booking.id" class="" data-toggle="tooltip" data-placement="top" title="Close">
+                                            <i class="fa fa-close fa-2x " style="color:red"></i>
+                                        </a>
+                                        <a href="/Admin/Booking/Update/@booking.id" data-toggle="tooltip" data-placement="top" title="Edit">
+                                            <i class="fa fa-pencil fa-2x color-muted m-r-5" style="color:green"></i>
+                                        </a>
+
+                                    </span>
+                                </td>
+
+                            </tr>
+
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
