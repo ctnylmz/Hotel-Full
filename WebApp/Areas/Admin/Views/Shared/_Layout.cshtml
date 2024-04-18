@@ -16,7 +16,7 @@
     <link href="~/Admin/css/style.css" rel="stylesheet">
 </head>
 <body>
-  
+
     <div id="main-wrapper">
 
         <div class="nav-header">
@@ -30,8 +30,8 @@
                 </a>
             </div>
         </div>
-     
-   
+
+
         <div class="header">
             <div class="header-content clearfix">
 
@@ -212,14 +212,20 @@
                 </div>
             </div>
         </div>
-       
+
         <!--  Sidebar start -->
-           
-    
+
+
         <div class="nk-sidebar">
             <div class="nk-nav-scroll">
                 <ul class="metismenu mt-3" id="menu">
-                    
+
+                    <li>
+                        <a href="/Admin/About" aria-expanded="false">
+                            <i class="icon-notebook menu-icon"></i><span class="nav-text">About</span>
+                        </a>
+                    </li>
+
                     <li>
                         <a href="/Admin/Staff" aria-expanded="false">
                             <i class="icon-notebook menu-icon"></i><span class="nav-text">Staff</span>
@@ -244,24 +250,24 @@
                             <i class="icon-grid menu-icon"></i><span class="nav-text">Booking</span>
                         </a>
                     </li>
-                
+
                 </ul>
             </div>
         </div>
-     
+
         <div class="content-body">
             @RenderBody()
         </div>
-   
+
         <div class="footer">
             <div class="copyright">
                 <p>Copyright &copy; Designed & Developed by <a href="https://themeforest.net/user/quixlab">Quixlab</a> 2018</p>
             </div>
         </div>
-     
+
     </div>
 
- 
+
     <script src="~/Admin/plugins/common/common.min.js"></script>
     <script src="~/Admin/js/custom.min.js"></script>
     <script src="~/Admin/js/settings.js"></script>
