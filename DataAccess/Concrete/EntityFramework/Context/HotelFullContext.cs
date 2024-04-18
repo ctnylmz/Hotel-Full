@@ -26,6 +26,7 @@ namespace DataAccess.Concrete.EntityFramework.Context
         public DbSet<About> Abouts { get; set; }
         public DbSet<Trailer> Trailers { get; set; }
         public DbSet<Booking> Bookings { get; set; }
+        public DbSet<Contact> Contacts { get; set; }
 
     }
 }

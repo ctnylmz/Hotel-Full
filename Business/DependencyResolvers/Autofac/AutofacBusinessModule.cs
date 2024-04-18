@@ -41,6 +41,9 @@ namespace Business.DependencyResolvers.Autofac
             builder.RegisterType<BookingManager>().As<IBookingService>().SingleInstance();
             builder.RegisterType<EfBookingDal>().As<IBookingDal>().SingleInstance();
 
+            builder.RegisterType<ContactManager>().As<IContactService>().SingleInstance();
+            builder.RegisterType<EfContactDal>().As<IContactDal>().SingleInstance();
+
         }
     }
 }
