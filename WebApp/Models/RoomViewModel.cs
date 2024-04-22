@@ -2,7 +2,7 @@
 {
     public class RoomViewModel
     {
-        public int id { get; set; }
+        public int id { get; set; } 
         public string coverImage { get; set; }
         public int price { get; set; }
         public string title { get; set; }

@@ -1,0 +1,44 @@
+﻿@model List<GuestViewModel>
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<div class="col-lg-11 mx-auto m-4">
+    <a href="/Admin/Guest/Add" class="btn btn-primary w-100 my-4">Add New Guest</a>
+
+    <div class="card">
+        <div class="card-body">
+            <div class="card-title">
+                <h4>Guest List</h4>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Surname</th>
+                            <th>City</th>
+                            <th>Operations</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var guest in Model)
+                        {
+                            <tr>
+                                <td>@guest.name</td>
+                                <td>@guest.surname</td>
+                                <td>@guest.city</td>
+                                <td>
+                                    <a href="/Admin/Guest/Delete/@guest.id" class="btn btn-danger mr-2">Delete</a>
+                                    <a href="/Admin/Guest/Update/@guest.id" class="btn btn-primary">Update</a>
+                                </td>
+                            </tr>
+
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

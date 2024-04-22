@@ -1,0 +1,63 @@
+﻿@model RoomViewModel
+
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-lg-11 mx-auto mt-4">
+            <div class="card">
+                <div class="card-body">
+                    <form method="post">
+                        <input type="hidden" asp-for="id" class="form-control" >
+
+
+                        <div class="form-group">
+                            <label for="title">Title</label>
+                            <input type="text" asp-for="title" class="form-control" id="title">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="description">Description</label>
+                            <textarea type="text" class="form-control" asp-for="description" id="description"> </textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="roomNumber">Room Number</label>
+                            <input type="text" class="form-control" asp-for="roomNumber" id="roomNumber">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="coverImage">Cover Image</label>
+                            <input type="text" asp-for="coverImage" class="form-control" id="coverImage">
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="price">Price</label>
+                            <input type="text" asp-for="price" class="form-control" id="price">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="bedCount">Bed Count</label>
+                            <input type="text" asp-for="bedCount" class="form-control" id="bedCount">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="bath">Bath Count</label>
+                            <input type="text" class="form-control" asp-for="bath" id="bath">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="wifi">Wifi</label>
+                            <input type="text" class="form-control" asp-for="wifi" id="Twitter">
+                        </div>
+
+
+                        <div class="d-flex justify-content-between">
+                            <a class="btn btn-danger w-50 mt-2 mr-2" href="/Admin/Room">Turn Back</a>
+                            <button type="submit" class="btn btn-primary w-50 mt-2 ml-2">Update Room</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

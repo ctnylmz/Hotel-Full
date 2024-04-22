@@ -1,0 +1,52 @@
+﻿@model List<RoomViewModel>
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<div class="col-lg-11 mx-auto m-4">
+    <a href="/Admin/Room/Add" class="btn btn-primary w-100 my-4">Add New Room</a>
+
+    <div class="card">
+        <div class="card-body">
+            <div class="card-title">
+                <h4>Room List</h4>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Name</th>
+                            <th>Title</th>
+                            <th>Facebook</th>
+                            <th>Twitter</th>
+                            <th>Instagram</th>
+                            <th>Operations</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var room in Model)
+                        {
+                            <tr>
+                                <td><img src="~/@room.coverImage" style="width:80px; height:80px;" /></td>
+                                <td>@room.price</td>
+                                <td>@room.title</td>
+                                <td>@room.bedCount</td>
+                                <td>@room.bath</td>
+                                <td>@room.wifi</td>
+                                <td>@room.description</td>
+                                <td>@room.roomNumber</td>
+                                <td>
+                                    <a href="/Admin/Room/Delete/@room.id" class="btn btn-danger mr-2">Delete</a>
+                                    <a href="/Admin/Room/Update/@room.id" class="btn btn-primary">Update</a>
+                                </td>
+                            </tr>
+
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

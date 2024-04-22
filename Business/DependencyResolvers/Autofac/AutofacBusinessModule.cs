@@ -44,6 +44,9 @@ namespace Business.DependencyResolvers.Autofac
             builder.RegisterType<ContactManager>().As<IContactService>().SingleInstance();
             builder.RegisterType<EfContactDal>().As<IContactDal>().SingleInstance();
 
+            builder.RegisterType<GuestManager>().As<IGuestService>().SingleInstance();
+            builder.RegisterType<EfGuesttDal>().As<IGuestDal>().SingleInstance();
+
         }
     }
 }

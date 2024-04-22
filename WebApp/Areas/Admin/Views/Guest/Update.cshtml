@@ -1,0 +1,35 @@
+﻿@model GuestViewModel
+
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-lg-8 mx-auto mt-4">
+            <div class="card">
+                <div class="card-body">
+                    <form method="post">
+                        <div class="form-group">
+                            <input type="hidden" asp-for="id">
+
+                            <label for="name">Name</label>
+                            <input type="text" asp-for="name" class="form-control" id="name" placeholder="Enter Name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="surname">Surname</label>
+                            <input type="text" asp-for="surname" class="form-control" id="surname" placeholder="Enter Surname">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="city">City</label>
+                            <input type="text" asp-for="city" class="form-control" id="city" placeholder="Enter City">
+                        </div>
+
+                        <div class="d-flex justify-content-between">
+                            <a class="btn btn-danger w-50 mt-2 mr-2" href="/Admin/Guest">Turn Back</a>
+                            <button type="submit" class="btn btn-primary w-50 mt-2 ml-2">Add Guest</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
