@@ -5,6 +5,8 @@ using WebApp.Models;
 using System.Text;
 using WebApp.Areas.Admin.Models;
 using Entities.Concrete;
+using MimeKit;
+using MailKit.Net.Smtp;
 
 namespace WebApp.Areas.Admin.Controllers
 {
@@ -112,6 +114,36 @@ namespace WebApp.Areas.Admin.Controllers
                 return View(service);
 
             }
+
+            return View();
+        }
+
+        [HttpGet]
+        public IActionResult Mail()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Mail(MailViewModel mailViewModel)
+        {
+            MimeMessage mimeMessage = new MimeMessage();
+            MailboxAddress mailboxAddressFrom = new MailboxAddress("HotelierAdmin","cetintrt@gmail.com");
+            mimeMessage.From.Add(mailboxAddressFrom);
+
+            MailboxAddress mailboxAddressTo = new MailboxAddress("User", mailViewModel.receiverMail);
+            mimeMessage.To.Add(mailboxAddressTo);
+
+            var bodyBuilder = new BodyBuilder();
+            bodyBuilder.TextBody = mailViewModel.Body;
+            mimeMessage.Body = bodyBuilder.ToMessageBody();
+            mimeMessage.Subject = mailViewModel.Subject;
+
+            SmtpClient client = new SmtpClient();
+            client.Connect("smtp.gmail.com", 587 , false);
+            client.Authenticate("cetintrt@gmail.com", "ddruciewsamxcbdr");
+            client.Send(mimeMessage);
+            client.Disconnect(true);
 
             return View();
         }
