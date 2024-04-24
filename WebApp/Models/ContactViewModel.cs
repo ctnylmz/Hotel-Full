@@ -1,6 +1,6 @@
 ﻿namespace WebApp.Models
 {
-    public class ContactViewModel
+    public class ContactViewModel 
     {
         public int id { get; set; }
         public string name { get; set; }

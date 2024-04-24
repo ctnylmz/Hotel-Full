@@ -47,6 +47,9 @@ namespace Business.DependencyResolvers.Autofac
             builder.RegisterType<GuestManager>().As<IGuestService>().SingleInstance();
             builder.RegisterType<EfGuesttDal>().As<IGuestDal>().SingleInstance();
 
+            builder.RegisterType<SendMessageManager>().As<ISendMessageService>().SingleInstance();
+            builder.RegisterType<EfSendMessageDal>().As<ISendMessageDal>().SingleInstance();
+
         }
     }
 }

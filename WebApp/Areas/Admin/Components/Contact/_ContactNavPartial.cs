@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace WebApp.Components.Default
+namespace WebApp.Areas.Admin.Components.Contact
 {
     public class _ContactNavPartial : ViewComponent
     {
@@ -9,5 +9,4 @@ namespace WebApp.Components.Default
             return View();
         }
     }
-   
 }

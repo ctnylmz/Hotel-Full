@@ -1,0 +1,32 @@
+﻿@model SendMessageViewModel
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-11 mx-auto">
+            <div class="card">
+                <div class="card-body">
+                    @await Component.InvokeAsync("WebApp.Areas.Admin.Components.Contact._ContactNavPartial")
+
+                    <div class="email-right-box">
+
+                        <div class="read-content">
+                            <div class="media mb-4 mt-1">
+                                <div class="media-body">
+                                    <span class="float-right">@Model.date.ToShortDateString()</span>
+                                    <h4 class="m-0 text-primary">@Model.title</h4>
+                                    <small class="text-muted">To:@Model.receiverMail</small>
+                                </div>
+                            </div>
+
+                            <p>
+                                @Model.content
+                            </p>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

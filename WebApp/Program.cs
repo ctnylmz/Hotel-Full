@@ -1,11 +1,17 @@
 using DataAccess.Concrete.EntityFramework.Context;
+using Entities.Concrete;
+using FluentValidation;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Identity;
+using WebApp.Areas.Admin.Models;
+using WebApp.ValidationRules.GuestValidationRules;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddControllersWithViews();
+builder.Services.AddControllersWithViews().AddFluentValidation();
 builder.Services.AddHttpClient();
+builder.Services.AddTransient<IValidator<GuestViewModel>, GuestValidationRules>();
 
 // DbContext'in servislere eklenmesi
 builder.Services.AddDbContext<HotelFullContext>();

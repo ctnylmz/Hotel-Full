@@ -1,0 +1,39 @@
+﻿@model ContactViewModel
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-11 mx-auto">
+            <div class="card">
+                <div class="card-body">
+                    @await Component.InvokeAsync("WebApp.Areas.Admin.Components.Contact._ContactNavPartial")
+
+                    <div class="email-right-box">
+                      
+                        <div class="read-content">
+                            <div class="media">
+                                <div class="media-body">
+                                    <h5 class="m-b-3">@Model.name</h5>
+                                    <p class="m-b-2">@Model.date.ToShortDateString()</p>
+                                </div>
+
+                            </div>
+                            <hr>
+                            <div class="media mb-4 mt-1">
+                                <div class="media-body">
+                                    <h4 class="m-0 text-primary">@Model.subject</h4>
+                                    <small class="text-muted">To:@Model.mail</small>
+                                </div>
+                            </div>
+                           
+                            <p>
+                                @Model.message
+                            </p>
+                           
+                        </div>
+                     
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

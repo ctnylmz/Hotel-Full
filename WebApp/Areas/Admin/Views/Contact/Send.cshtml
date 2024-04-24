@@ -1,0 +1,38 @@
+﻿<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-11 mx-auto">
+            <div class="card">
+                <div class="card-body">
+
+                    @await Component.InvokeAsync("WebApp.Areas.Admin.Components.Contact._ContactNavPartial")
+
+                    <div class="email-right-box">
+                        <div class="email-list m-t-15">
+                            @foreach (var item in Model)
+                            {
+                                <div class="message">
+                                    <a href="/Admin/Contact/SendBox/@item.id">
+                                        <div class="col-mail col-mail-1">
+                                            <div class="email-checkbox">
+                                                <input type="checkbox" id="chk2">
+                                                <label class="toggle" for="chk2"></label>
+                                            </div><span class="star-toggle ti-star"></span>
+                                        </div>
+                                        <div class="col-mail col-mail-2">
+                                            <div class="subject">
+                                                @((item.content.Length > 30) ? item.content.Substring(0, 30) : item.content)
+                                            </div>
+                                            <div class="date">@item.date.ToShortDateString()</div>
+                                        </div>
+                                    </a>
+                                </div>
+                            }
+                        </div>
+                        <!-- panel -->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

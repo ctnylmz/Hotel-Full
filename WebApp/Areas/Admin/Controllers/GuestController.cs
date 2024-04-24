@@ -45,16 +45,18 @@ namespace WebApp.Areas.Admin.Controllers
         [HttpPost]
         public async Task<IActionResult> Add(GuestViewModel guest)
         {
-
-            var client = _httpClientFactory.CreateClient();
-            var jsonData = JsonConvert.SerializeObject(guest);
-            StringContent stringContent = new StringContent(jsonData, Encoding.UTF8, "application/json");
-            var responseMessage = await client.PostAsync("https://localhost:7199/api/Guest/Add", stringContent);
-
-            if (responseMessage.IsSuccessStatusCode)
+            if (ModelState.IsValid)
             {
-                await UpdateAboutWithGuestCountAsync();
-                return RedirectToAction("Index");
+                var client = _httpClientFactory.CreateClient();
+                var jsonData = JsonConvert.SerializeObject(guest);
+                StringContent stringContent = new StringContent(jsonData, Encoding.UTF8, "application/json");
+                var responseMessage = await client.PostAsync("https://localhost:7199/api/Guest/Add", stringContent);
+
+                if (responseMessage.IsSuccessStatusCode)
+                {
+                    await UpdateAboutWithGuestCountAsync();
+                    return RedirectToAction("Index");
+                }
             }
 
             return View();
