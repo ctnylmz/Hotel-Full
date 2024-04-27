@@ -1,0 +1,50 @@
+﻿@{
+    ViewData["Title"] = "Index";
+}
+
+
+<div class="col-lg-11 mx-auto m-4">
+    <a href="/Admin/Booking/Add" class="btn btn-primary w-100 my-4">Add New Booking</a>
+
+    <div class="card">
+        <div class="card-body">
+            <div class="card-title">
+                <h4>Booking List</h4>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Full Name</th>
+                            <th>Email</th>
+                            <th>Operations</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var user in Model)
+                        {
+                            <tr>
+                                <td>@user.NormalizedUserName</td>
+                                <td>@user.Email</td>
+                                <td>
+                                    <span>
+                                        <a href="/Admin/User/Delete/@user.Id" class="" data-toggle="tooltip" data-placement="top" title="Close">
+                                            <i class="fa fa-close fa-2x " style="color:red"></i>
+                                        </a>
+                                        <a href="/Admin/User/Update/@user.Id" data-toggle="tooltip" data-placement="top" title="Edit">
+                                            <i class="fa fa-pencil fa-2x color-muted m-r-5" style="color:green"></i>
+                                        </a>
+
+                                    </span>
+                                </td>
+
+                            </tr>
+
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

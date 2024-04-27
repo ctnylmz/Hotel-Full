@@ -1,10 +1,13 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using WebApp.Areas.Admin.Models;
 
 namespace WebApp.Controllers
 {
     [Area("Admin")]
+    [AllowAnonymous]
+
     public class RegisterController : Controller
     {
         private readonly UserManager<IdentityUser> _userManager;

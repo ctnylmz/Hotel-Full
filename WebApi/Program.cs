@@ -39,6 +39,10 @@ if (app.Environment.IsDevelopment())
 
 app.UseCors(builder => builder.WithOrigins("https://localhost:44390").AllowAnyHeader().AllowAnyMethod());
 
+app.UseDefaultFiles();
+
+app.UseStaticFiles();
+
 app.UseHttpsRedirection();
 
 app.UseAuthorization();

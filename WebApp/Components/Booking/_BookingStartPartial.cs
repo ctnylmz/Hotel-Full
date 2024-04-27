@@ -2,7 +2,7 @@
 
 namespace WebApp.Components.Default
 {
-    public class _ContactNavPartial : ViewComponent
+    public class _BookingStartPartial : ViewComponent
     {
         public async Task<IViewComponentResult> InvokeAsync()
         {

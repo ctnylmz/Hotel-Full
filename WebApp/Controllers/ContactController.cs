@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Net.Http;
 using System.Text;
@@ -6,6 +7,8 @@ using WebApp.Models;
 
 namespace WebApp.Controllers
 {
+    [AllowAnonymous]
+
     public class ContactController : Controller
     {
         private readonly IHttpClientFactory _httpClientFactory;
