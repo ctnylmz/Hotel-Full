@@ -3,28 +3,24 @@ using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
 using System.Text;
 using WebApp.Areas.Admin.Models;
-using Microsoft.AspNetCore.Identity;
 
 namespace WebApp.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    public class UserController : Controller
+    public class DashboardController : Controller
     {
         private readonly IHttpClientFactory _httpClientFactory;
-        private readonly UserManager<IdentityUser> _userManager;
 
-        public UserController(IHttpClientFactory httpClientFactory, UserManager<IdentityUser> userManager)
+        public DashboardController(IHttpClientFactory httpClientFactory)
         {
             _httpClientFactory = httpClientFactory;
-            _userManager = userManager;
         }
 
         public async Task<IActionResult> Index()
         {
-            var result = _userManager.Users.ToList();
-
-            return View(result);
+            return View();
         }
+
 
 
         [HttpGet]
@@ -49,6 +45,7 @@ namespace WebApp.Areas.Admin.Controllers
 
             return View();
         }
+
 
 
         public async Task<IActionResult> Delete(int id)
