@@ -1,0 +1,40 @@
+﻿<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="active-member">
+                    <div class="table-responsive">
+                        <table class="table table-xs mb-0">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Status</th>
+                                    <th>Room Count</th>
+                                    <th>checkin Date</th>
+                                    <th>checkOut Date </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@item.name</td>
+                                        <td>
+                                            <span>@item.mail</span>
+                                        </td>
+                                        <td>@item.status</td>
+                                        <td>@item.roomCount</td>
+
+                                        <td>@item.checkin.Date.ToString("dd-MM-yyyy")</td>
+                                        <td>@item.checkOut.Date.ToString("dd-MM-yyyy")</td>>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
